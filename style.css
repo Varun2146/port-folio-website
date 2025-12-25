@@ -1,0 +1,386 @@
+/* ================= RESET ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ================= ROOT COLORS ================= */
+:root {
+  --bg-dark: #0a0a0a;
+  --bg-card: rgba(255, 255, 255, 0.06);
+  --accent: #00d4ff;
+  --accent-soft: rgba(0, 212, 255, 0.35);
+  --text-main: #e0e0e0;
+  --text-muted: #b0b0b0;
+}
+
+/* ================= BODY ================= */
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: linear-gradient(135deg, #050505, #141414);
+  color: var(--text-main);
+  line-height: 1.6;
+}
+
+/* ================= HEADER ================= */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+}
+
+nav {
+  max-width: 1200px;
+  margin: auto;
+  padding: 16px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav h1 {
+  font-size: 22px;
+  letter-spacing: 1px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 22px;
+}
+
+nav a {
+  color: var(--text-main);
+  text-decoration: none;
+  position: relative;
+  transition: color 0.3s;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  left: 0;
+  bottom: -5px;
+  background: var(--accent);
+  transition: width 0.3s ease;
+}
+
+nav a:hover {
+  color: var(--accent);
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+/* ================= MAIN ================= */
+main {
+  margin-top: 100px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px;
+}
+
+/* ================= SECTIONS ================= */
+section {
+  background: var(--bg-card);
+  border-radius: 14px;
+  padding: 35px;
+  margin-bottom: 45px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+section:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6);
+}
+
+h2 {
+  color: var(--accent);
+  margin-bottom: 18px;
+  letter-spacing: 0.5px;
+}
+
+h3 {
+  color: var(--accent);
+  margin-bottom: 10px;
+}
+
+/* ================= INTRO ================= */
+.profile-image {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.profile-image img {
+  width: 155px;
+  height: 155px;
+  border-radius: 50%;
+  border: 4px solid var(--accent);
+  object-fit: cover;
+  box-shadow: 0 0 25px var(--accent-soft);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.profile-image img:hover {
+  transform: scale(1.06);
+  box-shadow: 0 0 40px var(--accent);
+}
+
+.welcome-desc {
+  text-align: center;
+  color: var(--text-muted);
+  margin-bottom: 22px;
+}
+
+/* ================= BUTTON ================= */
+.neon-btn {
+  display: inline-block;
+  padding: 12px 30px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, var(--accent), #0099cc);
+  color: #000;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  text-decoration: none;
+  box-shadow: 0 0 15px var(--accent-soft);
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.neon-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 30px var(--accent);
+}
+
+.neon-btn:active {
+  transform: scale(0.96);
+}
+
+/* ================= LISTS ================= */
+.skills-list,
+.ed-detail {
+  list-style: circle;
+  padding-left: 22px;
+}
+
+.skills-list li,
+.ed-detail li {
+  margin-bottom: 6px;
+  color: var(--text-muted);
+}
+
+/* ================= PROJECTS ================= */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+.project {
+  background: rgba(0, 0, 0, 0.65);
+  border-radius: 12px;
+  padding: 22px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.05);
+}
+
+.project:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 40px rgba(0, 212, 255, 0.15);
+}
+
+.project p {
+  color: var(--text-muted);
+}
+
+/* ================= FORM ================= */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+input,
+textarea {
+  padding: 12px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  color: var(--text-main);
+  transition: border 0.3s ease, background 0.3s ease;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  background: rgba(255, 255, 255, 0.12);
+}
+
+/* ================= SOCIAL ================= */
+.social-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  margin-top: 22px;
+}
+
+.simple-btn {
+  font-size: 24px;
+  color: var(--text-muted);
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.simple-btn:hover {
+  color: var(--accent);
+  transform: scale(1.2);
+}
+
+/* ================= FOOTER ================= */
+footer {
+  text-align: center;
+  padding: 16px;
+  background: rgba(0, 0, 0, 0.85);
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  section {
+    padding: 25px;
+  }
+}
+
+/* ================= MOBILE-FIRST POLISH ================= */
+@media (max-width: 768px) {
+
+  /* Header & Nav */
+  header {
+    padding: 10px 0;
+  }
+
+  nav {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+
+  nav h1 {
+    font-size: 20px;
+  }
+
+  nav ul {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px;
+  }
+
+  nav a {
+    font-size: 14px;
+  }
+
+  /* Main spacing */
+  main {
+    margin-top: 120px;
+    padding: 12px;
+  }
+
+  section {
+    padding: 22px;
+    margin-bottom: 30px;
+  }
+
+  h2 {
+    font-size: 22px;
+  }
+
+  h3 {
+    font-size: 18px;
+  }
+
+  /* Profile image */
+  .profile-image img {
+    width: 120px;
+    height: 120px;
+  }
+
+  /* Intro text */
+  .welcome-desc {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  /* Buttons */
+  .neon-btn {
+    width: 100%;
+    text-align: center;
+    padding: 12px;
+    font-size: 15px;
+  }
+
+  /* Skills & education lists */
+  .skills-list,
+  .ed-detail {
+    padding-left: 18px;
+  }
+
+  .skills-list li,
+  .ed-detail li {
+    font-size: 14px;
+  }
+
+  /* Projects */
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project {
+    padding: 18px;
+  }
+
+  .project p {
+    font-size: 14px;
+  }
+
+  /* Forms */
+  input,
+  textarea {
+    font-size: 14px;
+  }
+
+  textarea {
+    min-height: 90px;
+  }
+
+  /* Social icons */
+  .social-buttons {
+    gap: 20px;
+  }
+
+  .simple-btn {
+    font-size: 26px;
+  }
+
+  /* Footer */
+  footer {
+    font-size: 13px;
+    padding: 14px;
+  }
+}
