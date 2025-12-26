@@ -23,8 +23,7 @@ portfolio/
 ├── Varun_J_CV.pdf
 └── profile.jpg
 
-markdown
-Copy code
+
 
 ## 📌 Projects Highlighted
 - **Console-Based Calculator (Java)**  
